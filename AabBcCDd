@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin >> t;
+	while (t--)
+	{
+	    int n;
+	    cin >> n;
+	    string s;
+	    cin >> s;
+	    map<char,int> mpp;
+	    for (int i=0;i<n;i++)
+	    {
+	        char x = s[i];
+	        if (x >= 'A' && x <= 'Z')
+	        {
+	           // tolower(s[i]);
+	           x = (char)tolower(x);
+	        }
+	       // cout << x<< " ";
+	        mpp[x]++;
+	    }
+	    vector<int> ans;
+	    for (auto it : mpp)
+	    {
+	        ans.push_back(it.second);
+	    }
+	    sort(ans.begin() , ans.end() , greater<int>());
+	    if(ans.size() == 1)
+	    cout << ans[0] << endl;
+	    else
+	    cout << ans[0] + ans[1] << endl;
+	    
+	}
+
+}
