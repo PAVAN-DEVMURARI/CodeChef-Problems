@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long b, g, x, y, n;
+        cin >> b >> g >> x >> y >> n;
+        
+        if (x + y > n) 
+        {
+            cout << -1 << endl;
+            continue;
+        }
+        
+        if (b < x || g < y) 
+        {
+            cout << -1 << endl;
+            continue;
+        }
+        
+        long long ans = (b + g + n - 1) / n;
+        
+        long long b_rooms = b / x;
+        long long g_rooms = g / y;
+        
+        if (ans <= b_rooms && ans <= g_rooms) 
+        {
+            cout << ans << endl;
+        } 
+        else 
+        {
+            cout << -1 << endl;
+        }
+    }
+    
+    return 0;
+}
